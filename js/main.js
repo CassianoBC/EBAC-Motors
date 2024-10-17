@@ -1,4 +1,11 @@
 $(document).ready(function() {
+    $('form').submit(function(event){
+
+        event.preventDefault(); // Impede o comportamento padrão de recarregar a página ao enviar o formulário
+    
+    });
+
+
     $('#carousel-imagens').slick({
         autoplay:true
     });
@@ -46,10 +53,10 @@ $(document).ready(function() {
         const destino = $('#contato');
         const nomeVeiculo = $(this).parent().find('h3').text();
 
-        $('#veiculo-intesse').val(nomeVeiculo);
+        $('#veiculo-interesse').val(nomeVeiculo);
 
         $('html').animate({
             scrolltop: destino.offset().top
         }, 1000)
-    });
+    })
 })
